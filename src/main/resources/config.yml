@@ -1,13 +1,20 @@
-# Servers that are allowed to use all channels
-serverwhitelist:
-- serverone
-- servertwo
-# Channels to block
-blockedchannels:
-  # List of blocked subchannels, use an empty list {} to block all
-  BungeeCord:
-  - Forward
-  - ServerIP
-  - Connect
-  - ConnectOther
-  ChannelName: {}
+servers:
+  # Servers that are allowed everything
+  whitelist:
+  - server1
+  - server2
+  channels:
+    mode: whitelist
+    # Channels to allow in whitelist mode
+    whitelist:
+      # List of allowed subchannels, use an empty list [] to allow all
+      SomePlugin: []
+    # Channels to block in blacklist mode
+    blacklist:
+      # List of blocked subchannels, use an empty list [] to block all
+      BungeeCord:
+      - Forward
+      - ServerIP
+      - Connect
+      - ConnectOther
+      Plugin2: []

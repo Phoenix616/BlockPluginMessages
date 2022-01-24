@@ -1,4 +1,4 @@
 name: BlockPluginMessages
 main: de.themoep.blockpluginmessages.BlockPluginMessages
-version: 1.0-SNAPSHOT
+version: '${minecraft.plugin.version}'
 author: Phoenix616
