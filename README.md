@@ -1,6 +1,6 @@
 # BlockPluginMessages
 
-Bungee plugin to block plugin certain plugin messages sent by servers.
+Bungee plugin to block certain plugin messages sent by servers or players.
 
 Supports both a whitelist as well as a blacklist mode and (one level of)
  sub channel matching e.g. for the inbuilt BungeeCord channel.
@@ -18,7 +18,7 @@ servers:
     # Channels to allow in whitelist mode
     whitelist:
       # List of allowed subchannels, use an empty list [] to allow all
-      SomePlugin: []
+      "someplugin:channel": []
     # Channels to block in blacklist mode
     blacklist:
       # List of blocked subchannels, use an empty list [] to block all
@@ -27,7 +27,22 @@ servers:
       - ServerIP
       - Connect
       - ConnectOther
-      Plugin2: []
+      "plugin2:channel": []
+players:
+  # Player bypass permission: blockpluginmessages.bypass[.<channel>]
+  channels:
+    mode: whitelist
+    # Channels to allow in whitelist mode
+    whitelist:
+      # List of allowed subchannels, use an empty list [] to allow all
+      # World name packets used by VoxelMap, Xaero's Map, JourneyMap and Rei's Minimap
+      "worldinfo:world_id": []
+      "xaeroworldmap:main": []
+    # Channels to block in blacklist mode
+    blacklist:
+      # List of blocked subchannels, use an empty list [] to block all
+      BungeeCord: [] # Technically the bungee blocks this itself already
+      "another:channel": []
 ```
 
 ## Download
